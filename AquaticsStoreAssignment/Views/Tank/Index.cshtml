@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AquaticsStoreAssignment.Models.Tank>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TankName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Volume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Filter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Heater)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lighting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dimensions)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TankName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Heater)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lighting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dimensions)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

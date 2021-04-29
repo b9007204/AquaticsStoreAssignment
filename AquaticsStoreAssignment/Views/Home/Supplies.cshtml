@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Supplies";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Please chose a category of products.</p>
+
+<div class="card-columns">
+    
+  
+    <div class="card-body">
+        <a asp-controller="Fish" asp-action="">
+            <img id="img-fish" src="~/Images/bettanew.jpg" alt="FishProductsLink" width="300" height="300" onmouseover="this.src = '/Images/BettaFish2new.jpg';" onmouseout="this.src = '/Images/bettanew.jpg';">
+        </a>
+        
+    </div>
+
+    <div class="card-body">
+        <a asp-controller="Tank" asp-action="">
+            <img class="img-tank" src="~/Images/Fishtanknew.jpg" alt="TankProductsLink" width="300" height="300" onmouseover="this.src = '/Images/FishtankChangednew.jpg';" onmouseout="this.src = '/Images/Fishtanknew.jpg';">
+        </a>
+    </div>
+
+    <div class="card-body">
+        <img class="img-accessories" src="~/Images/aquarium-plants.jpg" alt="AccessoriesProductsLink" width="300" height="300">
+    </div>
+
+       
+
+   
+</div>
+
+
+    

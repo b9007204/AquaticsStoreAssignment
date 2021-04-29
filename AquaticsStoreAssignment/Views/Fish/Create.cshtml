@@ -1,0 +1,94 @@
+﻿@model AquaticsStoreAssignment.Models.Fish
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Fish</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" name="createFishForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ID" class="control-label"></label>
+                <input asp-for="ID" class="form-control"  />
+                <span asp-validation-for="ID" class="text-danger" ></span>
+            </div>
+            <div class="form-group" >
+                <label asp-for="FishName" class="control-label" ></label>
+                <input asp-for="FishName" name="FishnameID" class="form-control"  />
+                <span asp-validation-for="FishName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HabitatType" class="control-label"></label>
+                <input asp-for="HabitatType" class="form-control" />
+                <span asp-validation-for="HabitatType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Temperament" class="control-label"></label>
+                <input asp-for="Temperament" class="form-control" />
+                <span asp-validation-for="Temperament" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AverageSize" class="control-label"></label>
+                <input asp-for="AverageSize" class="form-control" />
+                <span asp-validation-for="AverageSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinimumTankSize" class="control-label"></label>
+                <input asp-for="MinimumTankSize" class="form-control" />
+                <span asp-validation-for="MinimumTankSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Diet" class="control-label"></label>
+                <input asp-for="Diet" class="form-control" />
+                <span asp-validation-for="Diet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lifespan" class="control-label"></label>
+                <input asp-for="Lifespan" class="form-control" />
+                <span asp-validation-for="Lifespan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Availability" class="control-label"></label>
+                <input asp-for="Availability" class="form-control" />
+                <span asp-validation-for="Availability" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" onclick="return validateForm()" value="Create" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        function validateForm() {
+            var formname = document.forms["createFishForm"]["FishnameID"];
+
+            if (formname.value == "")
+           {
+               console.log("yoooo");
+                window.alert("Please do not leave fish name blank!");
+                formname.focus();
+               return false;
+            }
+            return true;
+            
+            }
+        }
+    </script>
+
+
+
+}

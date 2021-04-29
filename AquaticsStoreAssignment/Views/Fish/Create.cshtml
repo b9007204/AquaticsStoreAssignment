@@ -14,12 +14,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ID" class="control-label"></label>
-                <input asp-for="ID" class="form-control"  />
-                <span asp-validation-for="ID" class="text-danger" ></span>
+                <input asp-for="ID" class="form-control" />
+                <span asp-validation-for="ID" class="text-danger"></span>
             </div>
-            <div class="form-group" >
-                <label asp-for="FishName" class="control-label" ></label>
-                <input asp-for="FishName" name="FishnameID" class="form-control"  />
+            <div class="form-group">
+                <label asp-for="FishName" class="control-label"></label>
+                <input asp-for="FishName" class="form-control" />
                 <span asp-validation-for="FishName" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -58,7 +58,13 @@
                 <span asp-validation-for="Availability" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" onclick="return validateForm()" value="Create" class="btn btn-primary"/>
+                <label asp-for="FishBirthday" class="control-label"></label>
+                <input asp-for="FishBirthday" class="form-control" />
+                <span asp-validation-for="FishBirthday" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit"  value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -72,22 +78,7 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
-    <script>
-        function validateForm() {
-            var formname = document.forms["createFishForm"]["FishnameID"];
-
-            if (formname.value == "")
-           {
-               console.log("yoooo");
-                window.alert("Please do not leave fish name blank!");
-                formname.focus();
-               return false;
-            }
-            return true;
-            
-            }
-        }
-    </script>
+   
 
 
 

@@ -15,5 +15,6 @@ namespace AquaticsStoreAssignment.Data
         }
         public DbSet<AquaticsStoreAssignment.Models.Fish> Fish { get; set; }
         public DbSet<AquaticsStoreAssignment.Models.Tank> Tank { get; set; }
+        public DbSet<AquaticsStoreAssignment.Models.Accessory> Accessory { get; set; }
     }
 }
